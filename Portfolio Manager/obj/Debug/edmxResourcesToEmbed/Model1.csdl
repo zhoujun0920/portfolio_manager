@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BarrierOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsUp" Type="Boolean" />
+    <Property Name="IsIn" Type="Boolean" />
+    <Property Name="barrier" Type="Double" />
+    <Property Name="InstTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InstType" Relationship="Self.FK_InstTypeBarrierOption" FromRole="BarrierOptions" ToRole="InstTypes" />
+  </EntityType>
+  <EntityType Name="DigitalOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rebate" Type="Double" />
+    <Property Name="InstTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InstType" Relationship="Self.FK_InstTypeDigitalOption" FromRole="DigitalOptions" ToRole="InstTypes" />
+  </EntityType>
+  <EntityType Name="Instrument">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ticker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Exchange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Underlying" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Strike" Type="Double" />
+    <Property Name="Tenor" Type="Double" />
+    <Property Name="IsCall" Type="Int16" />
+    <Property Name="InstTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Prices" Relationship="Self.FK_InstrumentPrice" FromRole="Instruments" ToRole="Prices" />
+    <NavigationProperty Name="Trades" Relationship="Self.FK_InstrumentTrade" FromRole="Instruments" ToRole="Trades" />
+    <NavigationProperty Name="InstType" Relationship="Self.FK_InstTypeInstrument" FromRole="Instruments" ToRole="InstTypes" />
+  </EntityType>
+  <EntityType Name="InstType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Underlying" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BarrierOptions" Relationship="Self.FK_InstTypeBarrierOption" FromRole="InstTypes" ToRole="BarrierOptions" />
+    <NavigationProperty Name="DigitalOptions" Relationship="Self.FK_InstTypeDigitalOption" FromRole="InstTypes" ToRole="DigitalOptions" />
+    <NavigationProperty Name="Instruments" Relationship="Self.FK_InstTypeInstrument" FromRole="InstTypes" ToRole="Instruments" />
+    <NavigationProperty Name="LookBackOptions" Relationship="Self.FK_InstTypeLookBackOption" FromRole="InstTypes" ToRole="LookBackOptions" />
+  </EntityType>
+  <EntityType Name="InterestRate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tenor" Type="Double" />
+    <Property Name="Rate" Type="Double" />
+  </EntityType>
+  <EntityType Name="LookBackOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsFixed" Type="Boolean" />
+    <Property Name="InstTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InstType" Relationship="Self.FK_InstTypeLookBackOption" FromRole="LookBackOptions" ToRole="InstTypes" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Timestamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClosingPrice" Type="Double" />
+    <Property Name="InstrumentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Instrument" Relationship="Self.FK_InstrumentPrice" FromRole="Prices" ToRole="Instruments" />
+  </EntityType>
+  <EntityType Name="Trade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsBuy" Type="Boolean" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="UnderlyingP" Type="Double" />
+    <Property Name="MarketPrice" Type="Double" Nullable="true" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Timestamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PL" Type="Double" Nullable="false" />
+    <Property Name="Delta" Type="Double" />
+    <Property Name="Gamma" Type="Double" />
+    <Property Name="Vega" Type="Double" />
+    <Property Name="Theta" Type="Double" />
+    <Property Name="Rho" Type="Double" />
+    <Property Name="InstrumentId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Instrument" Relationship="Self.FK_InstrumentTrade" FromRole="Trades" ToRole="Instruments" />
+  </EntityType>
+  <Association Name="FK_InstTypeBarrierOption">
+    <End Role="InstTypes" Type="Self.InstType" Multiplicity="1" />
+    <End Role="BarrierOptions" Type="Self.BarrierOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BarrierOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeDigitalOption">
+    <End Role="InstTypes" Type="Self.InstType" Multiplicity="1" />
+    <End Role="DigitalOptions" Type="Self.DigitalOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DigitalOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstrumentPrice">
+    <End Role="Instruments" Type="Self.Instrument" Multiplicity="1" />
+    <End Role="Prices" Type="Self.Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instruments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prices">
+        <PropertyRef Name="InstrumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstrumentTrade">
+    <End Role="Instruments" Type="Self.Instrument" Multiplicity="1" />
+    <End Role="Trades" Type="Self.Trade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instruments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trades">
+        <PropertyRef Name="InstrumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeInstrument">
+    <End Role="InstTypes" Type="Self.InstType" Multiplicity="1" />
+    <End Role="Instruments" Type="Self.Instrument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Instruments">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeLookBackOption">
+    <End Role="InstTypes" Type="Self.InstType" Multiplicity="1" />
+    <End Role="LookBackOptions" Type="Self.LookBackOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LookBackOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Portfolio_ManagerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BarrierOptions" EntityType="Self.BarrierOption" />
+    <EntitySet Name="DigitalOptions" EntityType="Self.DigitalOption" />
+    <EntitySet Name="Instruments" EntityType="Self.Instrument" />
+    <EntitySet Name="InstTypes" EntityType="Self.InstType" />
+    <EntitySet Name="InterestRates" EntityType="Self.InterestRate" />
+    <EntitySet Name="LookBackOptions" EntityType="Self.LookBackOption" />
+    <EntitySet Name="Prices" EntityType="Self.Price" />
+    <EntitySet Name="Trades" EntityType="Self.Trade" />
+    <AssociationSet Name="FK_InstTypeBarrierOption" Association="Self.FK_InstTypeBarrierOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="BarrierOptions" EntitySet="BarrierOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeDigitalOption" Association="Self.FK_InstTypeDigitalOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="DigitalOptions" EntitySet="DigitalOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstrumentPrice" Association="Self.FK_InstrumentPrice">
+      <End Role="Instruments" EntitySet="Instruments" />
+      <End Role="Prices" EntitySet="Prices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstrumentTrade" Association="Self.FK_InstrumentTrade">
+      <End Role="Instruments" EntitySet="Instruments" />
+      <End Role="Trades" EntitySet="Trades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeInstrument" Association="Self.FK_InstTypeInstrument">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="Instruments" EntitySet="Instruments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeLookBackOption" Association="Self.FK_InstTypeLookBackOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="LookBackOptions" EntitySet="LookBackOptions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BarrierOptions" EntityType="Model.Store.BarrierOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DigitalOptions" EntityType="Model.Store.DigitalOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Instruments" EntityType="Model.Store.Instruments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstTypes" EntityType="Model.Store.InstTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InterestRates" EntityType="Model.Store.InterestRates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LookBackOptions" EntityType="Model.Store.LookBackOptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prices" EntityType="Model.Store.Prices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trades" EntityType="Model.Store.Trades" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_InstTypeBarrierOption" Association="Model.Store.FK_InstTypeBarrierOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="BarrierOptions" EntitySet="BarrierOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeDigitalOption" Association="Model.Store.FK_InstTypeDigitalOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="DigitalOptions" EntitySet="DigitalOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstrumentPrice" Association="Model.Store.FK_InstrumentPrice">
+      <End Role="Instruments" EntitySet="Instruments" />
+      <End Role="Prices" EntitySet="Prices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstrumentTrade" Association="Model.Store.FK_InstrumentTrade">
+      <End Role="Instruments" EntitySet="Instruments" />
+      <End Role="Trades" EntitySet="Trades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeInstrument" Association="Model.Store.FK_InstTypeInstrument">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="Instruments" EntitySet="Instruments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstTypeLookBackOption" Association="Model.Store.FK_InstTypeLookBackOption">
+      <End Role="InstTypes" EntitySet="InstTypes" />
+      <End Role="LookBackOptions" EntitySet="LookBackOptions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BarrierOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsUp" Type="bit" Nullable="true" />
+    <Property Name="IsIn" Type="bit" Nullable="true" />
+    <Property Name="barrier" Type="float" Nullable="true" />
+    <Property Name="InstTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DigitalOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rebate" Type="float" Nullable="true" />
+    <Property Name="InstTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instruments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Ticker" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Exchange" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Underlying" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Strike" Type="float" Nullable="true" />
+    <Property Name="Tenor" Type="float" Nullable="true" />
+    <Property Name="IsCall" Type="smallint" Nullable="true" />
+    <Property Name="InstTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Underlying" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InterestRates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenor" Type="float" Nullable="true" />
+    <Property Name="Rate" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LookBackOptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsFixed" Type="bit" Nullable="true" />
+    <Property Name="InstTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Timestamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClosingPrice" Type="float" Nullable="true" />
+    <Property Name="InstrumentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsBuy" Type="bit" Nullable="true" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="UnderlyingP" Type="float" Nullable="true" />
+    <Property Name="MarketPrice" Type="float" Nullable="true" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Timestamp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PL" Type="float" Nullable="false" />
+    <Property Name="Delta" Type="float" Nullable="true" />
+    <Property Name="Gamma" Type="float" Nullable="true" />
+    <Property Name="Vega" Type="float" Nullable="true" />
+    <Property Name="Theta" Type="float" Nullable="true" />
+    <Property Name="Rho" Type="float" Nullable="true" />
+    <Property Name="InstrumentId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_InstTypeBarrierOption">
+    <End Role="InstTypes" Type="Model.Store.InstTypes" Multiplicity="1" />
+    <End Role="BarrierOptions" Type="Model.Store.BarrierOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BarrierOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeDigitalOption">
+    <End Role="InstTypes" Type="Model.Store.InstTypes" Multiplicity="1" />
+    <End Role="DigitalOptions" Type="Model.Store.DigitalOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DigitalOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstrumentPrice">
+    <End Role="Instruments" Type="Model.Store.Instruments" Multiplicity="1" />
+    <End Role="Prices" Type="Model.Store.Prices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instruments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prices">
+        <PropertyRef Name="InstrumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstrumentTrade">
+    <End Role="Instruments" Type="Model.Store.Instruments" Multiplicity="1" />
+    <End Role="Trades" Type="Model.Store.Trades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instruments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trades">
+        <PropertyRef Name="InstrumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeInstrument">
+    <End Role="InstTypes" Type="Model.Store.InstTypes" Multiplicity="1" />
+    <End Role="Instruments" Type="Model.Store.Instruments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Instruments">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstTypeLookBackOption">
+    <End Role="InstTypes" Type="Model.Store.InstTypes" Multiplicity="1" />
+    <End Role="LookBackOptions" Type="Model.Store.LookBackOptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LookBackOptions">
+        <PropertyRef Name="InstTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

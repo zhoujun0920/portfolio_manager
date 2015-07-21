@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f4aca8d9502470895bf9275289b613b" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.BarrierOption" Width="1.5" PointX="0.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DigitalOption" Width="1.5" PointX="2.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Instrument" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InstType" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.InterestRate" Width="1.5" PointX="2.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LookBackOption" Width="1.5" PointX="0.625" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Price" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Trade" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_InstTypeBarrierOption" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InstTypeDigitalOption" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InstrumentPrice" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InstrumentTrade" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InstTypeInstrument" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_InstTypeLookBackOption" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

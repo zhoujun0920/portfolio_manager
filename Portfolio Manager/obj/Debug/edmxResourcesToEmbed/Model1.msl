@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Portfolio_ManagerEntities">
+    <EntitySetMapping Name="BarrierOptions">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.BarrierOption)">
+        <MappingFragment StoreEntitySet="BarrierOptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsUp" ColumnName="IsUp" />
+          <ScalarProperty Name="IsIn" ColumnName="IsIn" />
+          <ScalarProperty Name="barrier" ColumnName="barrier" />
+          <ScalarProperty Name="InstTypeId" ColumnName="InstTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DigitalOptions">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.DigitalOption)">
+        <MappingFragment StoreEntitySet="DigitalOptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="rebate" ColumnName="rebate" />
+          <ScalarProperty Name="InstTypeId" ColumnName="InstTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instruments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Instrument)">
+        <MappingFragment StoreEntitySet="Instruments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Ticker" ColumnName="Ticker" />
+          <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+          <ScalarProperty Name="Underlying" ColumnName="Underlying" />
+          <ScalarProperty Name="Strike" ColumnName="Strike" />
+          <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+          <ScalarProperty Name="IsCall" ColumnName="IsCall" />
+          <ScalarProperty Name="InstTypeId" ColumnName="InstTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.InstType)">
+        <MappingFragment StoreEntitySet="InstTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Underlying" ColumnName="Underlying" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterestRates">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.InterestRate)">
+        <MappingFragment StoreEntitySet="InterestRates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LookBackOptions">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.LookBackOption)">
+        <MappingFragment StoreEntitySet="LookBackOptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsFixed" ColumnName="IsFixed" />
+          <ScalarProperty Name="InstTypeId" ColumnName="InstTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prices">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Price)">
+        <MappingFragment StoreEntitySet="Prices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="ClosingPrice" ColumnName="ClosingPrice" />
+          <ScalarProperty Name="InstrumentId" ColumnName="InstrumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trades">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Trade)">
+        <MappingFragment StoreEntitySet="Trades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsBuy" ColumnName="IsBuy" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnderlyingP" ColumnName="UnderlyingP" />
+          <ScalarProperty Name="MarketPrice" ColumnName="MarketPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="Delta" ColumnName="Delta" />
+          <ScalarProperty Name="Gamma" ColumnName="Gamma" />
+          <ScalarProperty Name="Vega" ColumnName="Vega" />
+          <ScalarProperty Name="Theta" ColumnName="Theta" />
+          <ScalarProperty Name="Rho" ColumnName="Rho" />
+          <ScalarProperty Name="InstrumentId" ColumnName="InstrumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

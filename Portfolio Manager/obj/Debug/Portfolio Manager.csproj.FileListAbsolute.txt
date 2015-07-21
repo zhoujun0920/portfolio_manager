@@ -1,0 +1,52 @@
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\Portfolio Manager.exe.config
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\Portfolio Manager.exe
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\Portfolio Manager.pdb
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio Manager.csprojResolveAssemblyReference.cache
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form1.resources
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Properties.Resources.resources
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio Manager.csproj.GenerateResource.Cache
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio Manager.exe
+c:\users\junzhou\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio Manager.pdb
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form2.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form3.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form4.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form5.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form6.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form7.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form8.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form9.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form11.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form12.resources
+C:\Users\JUNZHOU\Documents\Visual Studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\EntityFramework.dll
+C:\Users\JUNZHOU\Documents\Visual Studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\JUNZHOU\Documents\Visual Studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\EntityFramework.xml
+C:\Users\JUNZHOU\Documents\Visual Studio 2013\Projects\Portfolio Manager\Portfolio Manager\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form10.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form13.resources
+C:\Users\JUNZHOU\documents\visual studio 2013\Projects\Portfolio Manager\Portfolio Manager\obj\Debug\Portfolio_Manager.Form14.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\Portfolio Manager.exe.config
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio Manager.exe
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio Manager.pdb
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\Portfolio Manager.exe
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\Portfolio Manager.pdb
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\EntityFramework.dll
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\EntityFramework.SqlServer.dll
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\EntityFramework.xml
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\bin\Debug\EntityFramework.SqlServer.xml
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio Manager.csprojResolveAssemblyReference.cache
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form1.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form10.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form11.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form12.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form13.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form14.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form2.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form3.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form4.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form5.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form6.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form7.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form8.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Form9.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio_Manager.Properties.Resources.resources
+E:\Graduate Study\Homework\5092\Jun_Zhou_Homework_6\Portfolio Manager\obj\Debug\Portfolio Manager.csproj.GenerateResource.Cache
